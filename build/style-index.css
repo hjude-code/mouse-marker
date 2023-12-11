@@ -1,1 +1,46 @@
-.wp-block-hjude-mouse-marker{background-color:#21759b;color:#fff;padding:2px}
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+span.wp-block-hjude-mouse-marker {
+  --xPos:0px;
+  --yPos:0px;
+  position: fixed;
+  transform: translate(calc(var(--xPos) - 50%), calc(var(--yPos) - 50%));
+  -webkit-backdrop-filter: invert(100%);
+          backdrop-filter: invert(100%);
+  display: block;
+  z-index: -1;
+  pointer-events: none !important;
+  line-height: 0px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: width 0.25s ease-in-out, height 0.25s ease-in-out, border-radius 0.25s ease-in-out;
+  width: 100px;
+  height: 100px;
+}
+
+span.wp-block-hjude-mouse-marker::before {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  width: 0%;
+  height: 0%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
+}
+
+body:has(a:hover) span.wp-block-hjude-mouse-marker::before {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+}
+
+/*# sourceMappingURL=style-index.css.map*/
